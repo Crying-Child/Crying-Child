@@ -1,0 +1,880 @@
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+ game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
+wait(1)
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Walk.AnimationId = "rbxassetid://7005162082"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Idle.AnimationId = "rbxassetid://7005139602"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main").CharaMoves.Animations.Run.AnimationId = "rbxassetid://4576074471"
+wait(3)
+local A_1 = {
+[1] = getrenv()._G.Pass,
+[2] = "Reset"
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Functions
+Event:InvokeServer(A_1)
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
+game.Players.LocalPlayer.Character["Karma"]:Destroy()
+game.Players.LocalPlayer.Character["RealKnife"]:Destroy()
+game.Players.LocalPlayer.Character["HeartLocket"]:Destroy()
+game.Players.LocalPlayer.Character["HateArm"]:Destroy()
+
+
+local bypass = Instance.new("BoolValue")
+bypass.Name = "Battling"
+bypass.Parent = game.Players.LocalPlayer.Character
+wait(1)
+game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 120
+local bypass = Instance.new("BoolValue")
+bypass.Name = "Battling"
+bypass.Parent = game.Players.LocalPlayer.Character
+wait(1)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+        mouse.KeyDown:Connect(function(k) 
+            if k == "r" then
+CFramee = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5776291266"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0.1)
+k:AdjustSpeed(0.4)
+Part1 = Instance.new("BodyPosition")
+Part1.Parent = game.Players.LocalPlayer.Character.Torso
+Part1.Position = CFramee.Position + CFramee.LookVector * 250 + CFramee.UpVector * 5
+Part1.D = 200
+Part1.P = 1250
+wait(1)
+Part1:destroy()
+
+
+
+end
+end)
+
+game.Workspace.ServerEffects.ServerCooldown:Destroy()
+
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k)
+	if k == "1" then
+CFramee = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://5776291266"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play(0.1)
+k:AdjustSpeed(0.4)
+Part1 = Instance.new("BodyPosition")
+Part1.Parent = game.Players.LocalPlayer.Character.Torso
+Part1.Position = CFramee.Position + CFramee.LookVector * 250 + CFramee.UpVector * 5
+Part1.D = 200
+Part1.P = 1250
+local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://3752095377"
+    local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+    k:Play()
+    k:AdjustSpeed(0.4)
+wait(1)
+Part1:destroy()
+local player = game.Players.LocalPlayer
+local char = player.Character
+local backpack = player.Backpack
+local main = backpack.Main
+local CharaMoves = main.CharaMoves
+local modulescript = CharaMoves.ModuleScript
+local clickanims = modulescript.Animations
+local BColor = char["Body Colors"]
+local renv = getrenv()._G.Pass
+local rep = game:GetService("ReplicatedStorage")
+local remotes = rep:WaitForChild("Remotes")
+local events = remotes:WaitForChild("Events")
+
+
+main.LockOnScript.LockOn.Value.HumanoidRootPart.Size = Vector3.new(9999, 9999, 9999)
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Spawn",
+        [4] = char.HumanoidRootPart.Position + char.HumanoidRootPart.CFrame.lookVector * -10
+    }
+}
+remotes.CharaMoves:InvokeServer(unpack(args))
+local projectiles = char.Attacks
+
+
+for i,v in pairs(projectiles:GetChildren()) do
+if v.Name == "KnifeSlashProjectileOrange" or "Removing" then
+    v:WaitForChild("BodyVelocity"):Destroy()
+    v:WaitForChild("ParticleEmitter"):Destroy()
+v.Position = char.HumanoidRootPart.Position - Vector3.new(0,500,500)
+for i = 50,100 do
+local args2 = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "KnifeProjectileOrange",
+        [3] = "Hit",
+        [4] = v,
+        [5] = v.CFrame,
+        [6] = workspace.Terrain
+    }
+}
+
+remotes.CharaMoves:InvokeServer(unpack(args2))
+
+end
+end
+end
+
+end
+end)
+
+
+game:GetService("UserInputService").InputBegan:Connect(function(key, typing) 
+    if typing then return end 
+    local button = Enum.KeyCode.Two
+    if key.KeyCode == button then
+local player = game.Players.LocalPlayer
+local char = player.Character
+local backpack = player.Backpack
+local main = backpack.Main
+local CharaMoves = main.CharaMoves
+local modulescript = CharaMoves.ModuleScript
+local clickanims = modulescript.Animations
+local BColor = char["Body Colors"]
+local renv = getrenv()._G.Pass
+local rep = game:GetService("ReplicatedStorage")
+local remotes = rep:WaitForChild("Remotes")
+local events = remotes:WaitForChild("Events")
+local shirt = char:FindFirstChild("Shirt");
+local pants = char:FindFirstChild("Pants");
+
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929681477"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 0.001, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 9
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+
+wait(0.1)
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929684994"
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 0.001, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 9
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+wait(0.1)
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929700678"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt2, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 0.001, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 9
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4929723918"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 0.001, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 9
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+    k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4906072632"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Normal", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GutHurt, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 0.001, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 9
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+wait(0.1)
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4906108508"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+          local args = {
+    [1] = getrenv()._G.Pass,
+    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
+    [3] = {
+        ["HitTime"] = 1, 
+        ["Type"] = "Knockback", 
+        ["HitEffect"] = "HeavyHitEffect",
+        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2, 
+        ["Velocity"] = char.HumanoidRootPart.CFrame.lookVector * 50, 
+        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+        ["Damage"] = 10
+    }
+}
+
+remotes.Damage:InvokeServer(unpack(args))
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4575857193"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+k.TimePosition = 0.2
+char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
+tar = char.HumanoidRootPart.CFrame*CFrame.new(0,30,0) + char.HumanoidRootPart.CFrame.lookVector * -35
+char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
+v2 = Instance.new('BodyPosition',char.HumanoidRootPart) 
+fol = Instance.new('Folder',v2)
+v2.Name = 'Client' 
+v2.MaxForce = Vector3.new(1,1,1)*100000 
+v2.D = 2500 
+v2.P = 60000 
+v2.Position = (tar).p
+wait(0.5)
+v2:Destroy()
+char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
+tar = char.HumanoidRootPart.CFrame*CFrame.new(0,-25,0) + char.HumanoidRootPart.CFrame.lookVector * -35
+char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
+v2 = Instance.new('BodyPosition',char.HumanoidRootPart) 
+fol = Instance.new('Folder',v2)
+v2.Name = 'Client' 
+v2.MaxForce = Vector3.new(1,1,1)*100000 
+v2.D = 2500 
+v2.P = 60000 
+v2.Position = (tar).p
+wait(0.2)
+v2:Destroy()
+k:Stop()
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://4575983939"
+local k = char.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+v:Fire({"Model","HighJump2",char["HumanoidRootPart"].CFrame * CFrame.new(0,-3,0)})
+Disabled = false
+end
+   
+       end
+end)
+
+
+
+                        local PLAYERS_INFO = Instance.new("ScreenGui")
+                        local Frame = Instance.new("Frame")
+                        local UICorner = Instance.new("UICorner")
+                        local Frame_2 = Instance.new("Frame")
+                        local Frame_3 = Instance.new("Frame")
+                        local UICorner_2 = Instance.new("UICorner")
+                        local Frame_4 = Instance.new("Frame")
+                        local ImageLabel = Instance.new("ImageLabel")
+                        local Frame_5 = Instance.new("Frame")
+                        local LockedOn = Instance.new("TextLabel")
+                        local Nickname = Instance.new("TextLabel")
+                        local ManaText = Instance.new("TextLabel")
+                        local Mana = Instance.new("TextLabel")
+                        local BlockText = Instance.new("TextLabel")
+                        local DEF = Instance.new("TextLabel")
+                        local ATKText = Instance.new("TextLabel")
+                        local ATK = Instance.new("TextLabel")
+                        local YourHPText = Instance.new("TextLabel")
+                        local YourHP = Instance.new("TextLabel")
+                        local DEFText = Instance.new("TextLabel")
+                        local Type = Instance.new("TextLabel")
+                        local HP = Instance.new("TextLabel")
+                        local HPText = Instance.new("TextLabel")
+                        local StamText = Instance.new("TextLabel")
+                        local Stam = Instance.new("TextLabel")
+                        local TypeText = Instance.new("TextLabel")
+                        local Block = Instance.new("TextLabel")
+
+                        --Properties:
+                        --game.CoreGui.PLAYERS_INFO:Remove()
+                        PLAYERS_INFO.Name = "PLAYERS_INFO"
+                        PLAYERS_INFO.Parent = game.CoreGui
+                        PLAYERS_INFO.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+                        Frame.Parent = PLAYERS_INFO
+                        Frame.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame.BorderSizePixel = 5
+                        Frame.Position = UDim2.new(0.5, 0, 0, -236)
+                        Frame.Size = UDim2.new(0, 710, 0, 260)
+                        Frame.ZIndex = 0
+
+                        UICorner.CornerRadius = UDim.new(0, 18)
+                        UICorner.Parent = Frame
+
+                        Frame_2.Parent = Frame
+                        Frame_2.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_2.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_2.BorderSizePixel = 0
+                        Frame_2.Position = UDim2.new(0.5, 0, 0, -5)
+                        Frame_2.Size = UDim2.new(0, 710, 0, 50)
+
+                        Frame_3.Parent = Frame
+                        Frame_3.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        Frame_3.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_3.BorderSizePixel = 5
+                        Frame_3.Position = UDim2.new(0.5, 0, 0, 0)
+                        Frame_3.Size = UDim2.new(0, 700, 0, 250)
+                        Frame_3.ZIndex = 2
+
+                        UICorner_2.CornerRadius = UDim.new(0, 18)
+                        UICorner_2.Parent = Frame_3
+
+                        Frame_4.Parent = Frame_3
+                        Frame_4.AnchorPoint = Vector2.new(0.5, 0)
+                        Frame_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                        Frame_4.BackgroundTransparency = 1.000
+                        Frame_4.BorderColor3 = Color3.fromRGB(255, 0, 0)
+                        Frame_4.BorderSizePixel = 0
+                        Frame_4.Position = UDim2.new(0.5, 0, 0, 0)
+                        Frame_4.Size = UDim2.new(0, 700, 0, 50)
+                        Frame_4.ZIndex = 3
+
+                        ImageLabel.Parent = Frame_4
+                        ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ImageLabel.BorderSizePixel = 0
+                        ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+                        ImageLabel.ZIndex = 3
+                        ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+                        ImageLabel.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+                        Frame_5.Parent = Frame_3
+                        Frame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Frame_5.BackgroundTransparency = 1.000
+                        Frame_5.Size = UDim2.new(1, 0, 1, 0)
+                        Frame_5.ZIndex = 4
+
+                        LockedOn.Name = "LockedOn"
+                        LockedOn.Parent = Frame_5
+                        LockedOn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.BackgroundTransparency = 1.000
+                        LockedOn.Size = UDim2.new(0, 230, 0, 50)
+                        LockedOn.Font = Enum.Font.Arcade
+                        LockedOn.Text = "LOCKED ON:"
+                        LockedOn.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.TextScaled = true
+                        LockedOn.TextSize = 56.000
+                        LockedOn.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        LockedOn.TextStrokeTransparency = 1.000
+                        LockedOn.TextWrapped = true
+                        LockedOn.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Nickname.Name = "Nickname"
+                        Nickname.Parent = Frame_5
+                        Nickname.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.BackgroundTransparency = 1.000
+                        Nickname.Position = UDim2.new(0, 230, 0, 0)
+                        Nickname.Size = UDim2.new(0, 270, 0, 50)
+                        Nickname.Font = Enum.Font.Arcade
+                        Nickname.Text = "NICKNAME"
+                        Nickname.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.TextScaled = true
+                        Nickname.TextSize = 56.000
+                        Nickname.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Nickname.TextStrokeTransparency = 1.000
+                        Nickname.TextWrapped = true
+                        Nickname.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ManaText.Name = "ManaText"
+                        ManaText.Parent = Frame_5
+                        ManaText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.BackgroundTransparency = 1.000
+                        ManaText.Position = UDim2.new(0, 330, 0, 100)
+                        ManaText.Size = UDim2.new(0, 120, 0, 50)
+                        ManaText.Font = Enum.Font.Arcade
+                        ManaText.Text = "MANA:"
+                        ManaText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.TextScaled = true
+                        ManaText.TextSize = 56.000
+                        ManaText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ManaText.TextStrokeTransparency = 1.000
+                        ManaText.TextWrapped = true
+                        ManaText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Mana.Name = "Mana"
+                        Mana.Parent = Frame_5
+                        Mana.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.BackgroundTransparency = 1.000
+                        Mana.Position = UDim2.new(0, 450, 0, 100)
+                        Mana.Size = UDim2.new(0, 160, 0, 50)
+                        Mana.Font = Enum.Font.Arcade
+                        Mana.Text = "100/100"
+                        Mana.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.TextScaled = true
+                        Mana.TextSize = 56.000
+                        Mana.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Mana.TextStrokeTransparency = 1.000
+                        Mana.TextWrapped = true
+                        Mana.TextXAlignment = Enum.TextXAlignment.Left
+
+                        BlockText.Name = "BlockText"
+                        BlockText.Parent = Frame_5
+                        BlockText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.BackgroundTransparency = 1.000
+                        BlockText.Position = UDim2.new(0, 0, 0, 150)
+                        BlockText.Size = UDim2.new(0, 140, 0, 50)
+                        BlockText.Font = Enum.Font.Arcade
+                        BlockText.Text = "BLOCK:"
+                        BlockText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.TextScaled = true
+                        BlockText.TextSize = 56.000
+                        BlockText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        BlockText.TextStrokeTransparency = 1.000
+                        BlockText.TextWrapped = true
+                        BlockText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        DEF.Name = "DEF"
+                        DEF.Parent = Frame_5
+                        DEF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.BackgroundTransparency = 1.000
+                        DEF.Position = UDim2.new(0, 350, 0, 50)
+                        DEF.Size = UDim2.new(0, 70, 0, 50)
+                        DEF.Font = Enum.Font.Arcade
+                        DEF.Text = "100"
+                        DEF.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.TextScaled = true
+                        DEF.TextSize = 56.000
+                        DEF.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        DEF.TextStrokeTransparency = 1.000
+                        DEF.TextWrapped = true
+                        DEF.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ATKText.Name = "ATKText"
+                        ATKText.Parent = Frame_5
+                        ATKText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.BackgroundTransparency = 1.000
+                        ATKText.Position = UDim2.new(0, 440, 0, 50)
+                        ATKText.Size = UDim2.new(0, 100, 0, 50)
+                        ATKText.Font = Enum.Font.Arcade
+                        ATKText.Text = "ATK:"
+                        ATKText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.TextScaled = true
+                        ATKText.TextSize = 56.000
+                        ATKText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ATKText.TextStrokeTransparency = 1.000
+                        ATKText.TextWrapped = true
+                        ATKText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        ATK.Name = "ATK"
+                        ATK.Parent = Frame_5
+                        ATK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.BackgroundTransparency = 1.000
+                        ATK.Position = UDim2.new(0, 540, 0, 50)
+                        ATK.Size = UDim2.new(0, 70, 0, 50)
+                        ATK.Font = Enum.Font.Arcade
+                        ATK.Text = "100"
+                        ATK.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.TextScaled = true
+                        ATK.TextSize = 56.000
+                        ATK.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        ATK.TextStrokeTransparency = 1.000
+                        ATK.TextWrapped = true
+                        ATK.TextXAlignment = Enum.TextXAlignment.Left
+
+                        YourHPText.Name = "YourHPText"
+                        YourHPText.Parent = Frame_5
+                        YourHPText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.BackgroundTransparency = 1.000
+                        YourHPText.Position = UDim2.new(0, 0, 0, 200)
+                        YourHPText.Size = UDim2.new(0, 190, 0, 50)
+                        YourHPText.Font = Enum.Font.Arcade
+                        YourHPText.Text = "YOUR HP:"
+                        YourHPText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.TextScaled = true
+                        YourHPText.TextSize = 56.000
+                        YourHPText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHPText.TextStrokeTransparency = 1.000
+                        YourHPText.TextWrapped = true
+                        YourHPText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        YourHP.Name = "YourHP"
+                        YourHP.Parent = Frame_5
+                        YourHP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.BackgroundTransparency = 1.000
+                        YourHP.Position = UDim2.new(0, 190, 0, 200)
+                        YourHP.Size = UDim2.new(0, 160, 0, 50)
+                        YourHP.Font = Enum.Font.Arcade
+                        YourHP.Text = "100/100"
+                        YourHP.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.TextScaled = true
+                        YourHP.TextSize = 56.000
+                        YourHP.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        YourHP.TextStrokeTransparency = 1.000
+                        YourHP.TextWrapped = true
+                        YourHP.TextXAlignment = Enum.TextXAlignment.Left
+
+                        DEFText.Name = "DEFText"
+                        DEFText.Parent = Frame_5
+                        DEFText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.BackgroundTransparency = 1.000
+                        DEFText.Position = UDim2.new(0, 250, 0, 50)
+                        DEFText.Size = UDim2.new(0, 100, 0, 50)
+                        DEFText.Font = Enum.Font.Arcade
+                        DEFText.Text = "DEF:"
+                        DEFText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.TextScaled = true
+                        DEFText.TextSize = 56.000
+                        DEFText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        DEFText.TextStrokeTransparency = 1.000
+                        DEFText.TextWrapped = true
+                        DEFText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Type.Name = "Type"
+                        Type.Parent = Frame_5
+                        Type.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.BackgroundTransparency = 1.000
+                        Type.Position = UDim2.new(0, 130, 0, 100)
+                        Type.Size = UDim2.new(0, 200, 0, 50)
+                        Type.Font = Enum.Font.Arcade
+                        Type.Text = "Undyne"
+                        Type.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.TextScaled = true
+                        Type.TextSize = 56.000
+                        Type.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Type.TextStrokeTransparency = 1.000
+                        Type.TextWrapped = true
+                        Type.TextXAlignment = Enum.TextXAlignment.Left
+
+                        HP.Name = "HP"
+                        HP.Parent = Frame_5
+                        HP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.BackgroundTransparency = 1.000
+                        HP.Position = UDim2.new(0, 70, 0, 50)
+                        HP.Size = UDim2.new(0, 160, 0, 50)
+                        HP.Font = Enum.Font.Arcade
+                        HP.Text = "100/100"
+                        HP.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.TextScaled = true
+                        HP.TextSize = 56.000
+                        HP.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        HP.TextStrokeTransparency = 1.000
+                        HP.TextWrapped = true
+                        HP.TextXAlignment = Enum.TextXAlignment.Left
+
+                        HPText.Name = "HPText"
+                        HPText.Parent = Frame_5
+                        HPText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.BackgroundTransparency = 1.000
+                        HPText.Position = UDim2.new(0, 0, 0, 50)
+                        HPText.Size = UDim2.new(0, 70, 0, 50)
+                        HPText.Font = Enum.Font.Arcade
+                        HPText.Text = "HP:"
+                        HPText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.TextScaled = true
+                        HPText.TextSize = 56.000
+                        HPText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        HPText.TextStrokeTransparency = 1.000
+                        HPText.TextWrapped = true
+                        HPText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        StamText.Name = "StamText"
+                        StamText.Parent = Frame_5
+                        StamText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.BackgroundTransparency = 1.000
+                        StamText.Position = UDim2.new(0, 330, 0, 150)
+                        StamText.Size = UDim2.new(0, 120, 0, 50)
+                        StamText.Font = Enum.Font.Arcade
+                        StamText.Text = "STAM:"
+                        StamText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.TextScaled = true
+                        StamText.TextSize = 56.000
+                        StamText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        StamText.TextStrokeTransparency = 1.000
+                        StamText.TextWrapped = true
+                        StamText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Stam.Name = "Stam"
+                        Stam.Parent = Frame_5
+                        Stam.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.BackgroundTransparency = 1.000
+                        Stam.Position = UDim2.new(0, 450, 0, 150)
+                        Stam.Size = UDim2.new(0, 160, 0, 50)
+                        Stam.Font = Enum.Font.Arcade
+                        Stam.Text = "100/100"
+                        Stam.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.TextScaled = true
+                        Stam.TextSize = 56.000
+                        Stam.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Stam.TextStrokeTransparency = 1.000
+                        Stam.TextWrapped = true
+                        Stam.TextXAlignment = Enum.TextXAlignment.Left
+
+                        TypeText.Name = "TypeText"
+                        TypeText.Parent = Frame_5
+                        TypeText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.BackgroundTransparency = 1.000
+                        TypeText.Position = UDim2.new(0, 0, 0, 100)
+                        TypeText.Size = UDim2.new(0, 130, 0, 50)
+                        TypeText.Font = Enum.Font.Arcade
+                        TypeText.Text = "TYPE:"
+                        TypeText.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.TextScaled = true
+                        TypeText.TextSize = 56.000
+                        TypeText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        TypeText.TextStrokeTransparency = 1.000
+                        TypeText.TextWrapped = true
+                        TypeText.TextXAlignment = Enum.TextXAlignment.Left
+
+                        Block.Name = "Block"
+                        Block.Parent = Frame_5
+                        Block.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.BackgroundTransparency = 1.000
+                        Block.Position = UDim2.new(0, 140, 0, 150)
+                        Block.Size = UDim2.new(0, 150, 0, 50)
+                        Block.Font = Enum.Font.Arcade
+                        Block.Text = "False"
+                        Block.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.TextScaled = true
+                        Block.TextSize = 56.000
+                        Block.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+                        Block.TextStrokeTransparency = 1.000
+                        Block.TextWrapped = true
+                        Block.TextXAlignment = Enum.TextXAlignment.Left
+
+                        -- Scripts:
+
+                        local function WWIF_fake_script() -- Frame_5.LocalScript
+                            local script = Instance.new("LocalScript", Frame_5)
+
+                            -- -236
+                            -- -36
+                            local function f(a)
+                                if script.Parent:FindFirstChild(a) == nil then
+                                    print("OH SHIT")
+                                end
+                                return script.Parent:FindFirstChild(a) == nil
+                            end
+                            local onTop = true
+                            local TweenService = game:GetService("TweenService")
+                            local tweenInfo =
+                                TweenInfo.new(
+                                1, -- Time
+                                Enum.EasingStyle.Quad, -- EasingStyle
+                                Enum.EasingDirection.InOut, -- EasingDirection
+                                0, -- RepeatCount (when less than zero the tween will loop indefinitely)
+                                false, -- Reverses (tween will reverse once reaching it's goal)
+                                0 -- DelayTime
+                            )
+                            local tweenToTop =
+                                TweenService:Create(
+                                script.Parent.Parent.Parent,
+                                tweenInfo,
+                                {Position = UDim2.new(0.5, 0, 0, -236)}
+                            )
+                            local tweenToBottom =
+                                TweenService:Create(
+                                script.Parent.Parent.Parent,
+                                tweenInfo,
+                                {Position = UDim2.new(0.5, 0, 0, -36)}
+                            )
+                            local function moveToTop()
+                                if onTop then
+                                    return
+                                end
+                                script.Parent.Nickname.Text = "nil"
+                                script.Parent.Type.Text = "nil"
+                                script.Parent.HP.Text = "NaN/NaN"
+                                script.Parent.DEF.Text = "NaN"
+                                script.Parent.ATK.Text = "NaN"
+                                script.Parent.Block.Text = "nil"
+                                script.Parent.Stam.Text = "NaN/NaN"
+                                script.Parent.Mana.Text = "NaN/NaN"
+                                onTop = true
+                                tweenToBottom:Pause()
+                                tweenToTop:Play()
+                            end
+                            local function moveToBottom()
+                                if not onTop then
+                                    return
+                                end
+                                onTop = false
+                                tweenToTop:Pause()
+                                tweenToBottom:Play()
+                            end
+                            while game:GetService("RunService").Heartbeat:Wait() do
+                                if
+                                    f("Nickname") or f("Type") or f("HP") or f("DEF") or f("ATK") or f("Block") or
+                                        f("Stam") or
+                                        f("Mana")
+                                 then
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Character ~= nil then
+                                    if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil then
+                                        script.Parent.YourHP.Text =
+                                            math.ceil(game.Players.LocalPlayer.Character.Humanoid.Health) ..
+                                            "/" .. math.ceil(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)
+                                    else
+                                        script.Parent.YourHP.Text = "NaN/NaN"
+                                    end
+                                else
+                                    script.Parent.YourHP.Text = "NaN/NaN"
+                                end
+                                if disable_lock_info then
+                                    moveToTop()
+                                    continue
+                                end
+                                if game.Players.LocalPlayer.Backpack:FindFirstChild("Main") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Backpack.Main:FindFirstChild("LockOnScript") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                if game.Players.LocalPlayer.Backpack.Main.LockOnScript:FindFirstChild("LockOn") == nil then
+                                    moveToTop()
+                                continue
+                                end
+                                local nickname = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+                                if nickname == nil then
+                                    moveToTop()
+                                    continue
+                                end
+                                if game.Workspace:FindFirstChild(nickname.Name) == nil then
+                                    moveToTop()
+                                    continue
+                                end
+                                nickname = nickname.Name
+                                moveToBottom()
+                                script.Parent.Nickname.Text = nickname
+                                if game.Workspace[nickname]:FindFirstChild("Type") ~= nil then
+                                    script.Parent.Type.Text = game.Workspace[nickname].Type.Value
+                                else
+                                    script.Parent.Type.Text = "nil"
+                                end
+                                if game.Workspace[nickname]:FindFirstChild("Humanoid") ~= nil then
+                                    script.Parent.HP.Text =
+                                        math.ceil(game.Workspace[nickname].Humanoid.Health) ..
+                                        "/" .. math.ceil(game.Workspace[nickname].Humanoid.MaxHealth)
+                                else
+                                    script.Parent.HP.Text = "NaN/NaN"
+                                end
+                                if game.Workspace[nickname]:FindFirstChild("Data") == nil then
+                                    script.Parent.DEF.Text = "NaN"
+                                    script.Parent.ATK.Text = "NaN"
+                                    script.Parent.Block.Text = "nil"
+                                    script.Parent.Stam.Text = "NaN/NaN"
+                                    script.Parent.Mana.Text = "NaN/NaN"
+                                continue
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Defense") ~= nil then
+                                    script.Parent.DEF.Text = math.ceil(game.Workspace[nickname].Data.Defense.Value)
+                                else
+                                    script.Parent.DEF.Text = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Attack") ~= nil then
+                                    script.Parent.ATK.Text = math.ceil(game.Workspace[nickname].Data.Attack.Value)
+                                else
+                                    script.Parent.ATK.Text = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("Blocking") ~= nil then
+                                    if game.Workspace[nickname].Data.Blocking.Value then
+                                        script.Parent.Block.Text = "True"
+                                    else
+                                        script.Parent.Block.Text = "False"
+                                    end
+                                else
+                                    script.Parent.Block.Text = "nil"
+                                end
+                                local sprintMax = "NaN"
+                                local sprint = "NaN"
+                                if game.Workspace[nickname].Data:FindFirstChild("SprintMeter") ~= nil then
+                                    sprint = math.ceil(game.Workspace[nickname].Data.SprintMeter.Value)
+                                else
+                                    sprint = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("MaxSprintMeter") ~= nil then
+                                    sprintMax = math.ceil(game.Workspace[nickname].Data.MaxSprintMeter.Value)
+                                else
+                                    sprintMax = "NaN"
+                                end
+                                local staminaMax = "NaN"
+                                local stamina = "NaN"
+                                if game.Workspace[nickname].Data:FindFirstChild("Stamina") ~= nil then
+                                    stamina = math.ceil(game.Workspace[nickname].Data.Stamina.Value)
+                                else
+                                    stamina = "NaN"
+                                end
+                                if game.Workspace[nickname].Data:FindFirstChild("MaxStamina") ~= nil then
+                                    staminaMax = math.ceil(game.Workspace[nickname].Data.MaxStamina.Value)
+                                else
+                                    staminaMax = "NaN"
+                                end
+                                script.Parent.Stam.Text = sprint .. "/" .. sprintMax
+                                script.Parent.Mana.Text = stamina .. "/" .. staminaMax
+                            end
+                        end
+                        coroutine.wrap(WWIF_fake_script)()
