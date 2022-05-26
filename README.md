@@ -2,7 +2,7 @@
 - 👀 I’m interested in scripting
 - 🌱 I’m currently learning how to script
 - 💞️ I’m looking to collaborate on nothing yet
-- 📫 You can reach me at my discord account called Metal Child#2845
+- 📫 You can reach me at my discord account called Doggo#2873
 
 <!---
 Crying-Child/Crying-Child is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
